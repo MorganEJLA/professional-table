@@ -20,100 +20,51 @@
 
     <!-- Container -->
     <div class="container">
-      <h1>Dessert Database</h1>
+      <h1>User Database</h1>
       <!-- Loader -->
-      <div class="spinner" id="spinner" hidden>
+      <div class="spinner" id="spinner" style="display: none">
         <i class="fa-solid fa-cog fa-spin fa-spin-reverse"></i>
       </div>
       <!-- Table -->
-      <table id="data-table">
+      <table id="data-table" style="display: none">
         <thead>
           <tr>
-            <th class="title-column">
-              Dessert Name <i class="fas fa-sort" id="icon-0"></i>
+            <th onclick="sortTable(0)" class="title-column">
+              Name <i class="fas fa-sort" id="icon-0"></i>
             </th>
-            <th class="year-column">
-              Country
+            <th onclick="sortTable(1)" class="year-column">
+              Email
               <i class="fas fa-sort" id="icon-1"></i>
             </th>
-            <th class="persona-column">
-              Ingredient <i class="fas fa-sort" id="icon-2"></i>
+            <th onclick="sortTable(2)" class="username-column">
+              Username <i class="fas fa-sort" id="icon-2"></i>
             </th>
-            <th class="persona-column">
-              Category <i class="fas fa-sort" id="icon-2"></i>
+            <th onclick="sortTable(3)" class="country-column">
+              Country <i class="fas fa-sort" id="icon-3"></i>
             </th>
           </tr>
         </thead>
-        <tbody>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
-          <tr>
-            <td data-label="Dessert-Name">Dessert Name</td>
-            <td data-label="Country">Country</td>
-            <td data-label="Featured Ingredient">Ingredient</td>
-            <td data-label="Category">Category</td>
-          </tr>
+        <tbody id="table-body">
+          <!-- Dynamically added rows -->
         </tbody>
       </table>
       <!-- Pagination -->
-      <div class="pagination">
-        <button type="button" id="prev-btn" title="Previous Page" disabled>
+      <div class="pagination" id="pagination" style="display: none">
+        <button
+          type="button"
+          id="prev-btn"
+          title="Previous Page"
+          onclick="prevPage()"
+        >
           <i class="fas fa-chevron-left"></i>
         </button>
         <span id="page-number">1 </span>
-        <button type="button" id="next-btn" title="Next Page">
+        <button
+          type="button"
+          id="next-btn"
+          title="Next Page"
+          onclick="nextPage()"
+        >
           <i class="fas fa-chevron-right"></i>
         </button>
       </div>
